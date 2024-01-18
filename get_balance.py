@@ -1,4 +1,8 @@
+import dotenv
+import os
 from web3 import Web3
+
+dotenv.load_dotenv()
 
 
 def get_xdai(wallet_address: str, rpc: str):
@@ -13,8 +17,8 @@ if __name__ == "__main__":
     print(
         "xDai balance:",
         get_xdai(
-            wallet_address="0x3666DA333dAdD05083FEf9FF6dDEe588d26E4307",
-            # rpc="https://lb.nodies.app/v1/68c917627d284b77888e2c90e9340862/",
+            wallet_address=os.getenv("WALLET_ADDRESS"),
+            # From https://chainlist.org/chain/100 -- need to connect wallet?
             rpc="https://endpoints.omniatech.io/v1/gnosis/mainnet/public",
         ),
     )

@@ -9,3 +9,9 @@ python3.10 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+
+Create a `.env` file in the root directory:
+
+```bash
+WALLET_ADDRESS="0x..."
+```
